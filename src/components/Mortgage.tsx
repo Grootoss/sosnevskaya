@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { asset } from "../asset";
 
 const banks = [
   {
     id: 1,
     name: "Альфабанк",
-    logo: "/images/bank-mobile-1.svg",
+    logo: asset("images/bank-mobile-1.svg"),
     payment: "30%",
     term: "от 1 года до 30 лет",
     rate: "12,6%",
@@ -13,7 +14,7 @@ const banks = [
   {
     id: 2,
     name: "Сбербанк",
-    logo: "/images/bank-mobile-2.svg",
+    logo: asset("images/bank-mobile-2.svg"),
     payment: "30%",
     term: "от 1 года до 30 лет",
     rate: "12,6%",
@@ -22,7 +23,7 @@ const banks = [
   {
     id: 3,
     name: "Азиатско Тихоокеанский банк",
-    logo: "/images/bank-mobile-3.svg",
+    logo: asset("images/bank-mobile-3.svg"),
     payment: "30%",
     term: "от 1 года до 30 лет",
     rate: "12,6%",
@@ -31,7 +32,7 @@ const banks = [
   {
     id: 4,
     name: "Всероссийский банк развития регионов",
-    logo: "/images/bank-mobile-4.svg",
+    logo: asset("images/bank-mobile-4.svg"),
     payment: "30%",
     term: "от 1 года до 30 лет",
     rate: "12,6%",

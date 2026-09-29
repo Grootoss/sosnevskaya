@@ -106,7 +106,7 @@ a {
   width: 100%;
   min-height: 741px;
   aspect-ratio: 375 / 741;
-  background: #1b2438 url("/images/promo-mobile-bg.jpg") center top / cover no-repeat;
+  background: #1b2438 var(--promo-bg-mobile) center top / cover no-repeat;
   color: var(--text);
 }
 
@@ -1184,7 +1184,7 @@ a {
   .promo {
     min-height: 1045px;
     aspect-ratio: 834 / 1045;
-    background-image: url("/images/promo-tablet-bg.jpg");
+    background-image: var(--promo-bg-tablet);
     background-position: center top;
     background-size: cover;
   }
@@ -1781,7 +1781,7 @@ a {
   .promo {
     min-height: 1129px;
     aspect-ratio: 1440 / 1129;
-    background-image: url("/images/promo-desktop-bg.jpg");
+    background-image: var(--promo-bg-desktop);
     background-position: center top;
     background-size: cover;
   }

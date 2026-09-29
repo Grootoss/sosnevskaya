@@ -1,8 +1,10 @@
+import { asset } from "../asset";
+
 const contacts = [
   {
     id: "sales",
     href: "tel:+70000000000",
-    icon: "/images/phone.svg",
+    icon: asset("images/phone.svg"),
     iconWidth: 18,
     iconHeight: 18,
     value: "+ 7 (000) 000 00 00",
@@ -11,7 +13,7 @@ const contacts = [
   {
     id: "mail",
     href: "mailto:mail@mail.ru",
-    icon: "/images/mail.svg",
+    icon: asset("images/mail.svg"),
     iconWidth: 20,
     iconHeight: 20,
     value: "mail@mail.ru",
@@ -20,7 +22,7 @@ const contacts = [
   {
     id: "mortgage",
     href: "tel:+70000000000",
-    icon: "/images/phone.svg",
+    icon: asset("images/phone.svg"),
     iconWidth: 18,
     iconHeight: 18,
     value: "+ 7 (000) 000 00 00",

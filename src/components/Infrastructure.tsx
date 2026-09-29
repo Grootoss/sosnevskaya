@@ -1,31 +1,33 @@
+import { asset } from "../asset";
+
 const items = [
   {
     id: 1,
     title: "Библиотека",
-    mobile: "/images/infra-mobile-1.jpg",
-    tablet: "/images/infra-tablet-1.jpg",
-    desktop: "/images/infra-desktop-1.jpg",
+    mobile: asset("images/infra-mobile-1.jpg"),
+    tablet: asset("images/infra-tablet-1.jpg"),
+    desktop: asset("images/infra-desktop-1.jpg"),
   },
   {
     id: 2,
     title: "Парковка",
-    mobile: "/images/infra-mobile-2.jpg",
-    tablet: "/images/infra-tablet-2.jpg",
-    desktop: "/images/infra-desktop-2.jpg",
+    mobile: asset("images/infra-mobile-2.jpg"),
+    tablet: asset("images/infra-tablet-2.jpg"),
+    desktop: asset("images/infra-desktop-2.jpg"),
   },
   {
     id: 3,
     title: "Бассейн",
-    mobile: "/images/infra-mobile-3.jpg",
-    tablet: "/images/infra-tablet-3.jpg",
-    desktop: "/images/infra-desktop-3.jpg",
+    mobile: asset("images/infra-mobile-3.jpg"),
+    tablet: asset("images/infra-tablet-3.jpg"),
+    desktop: asset("images/infra-desktop-3.jpg"),
   },
   {
     id: 4,
     title: "Фитнес",
-    mobile: "/images/infra-mobile-4.jpg",
-    tablet: "/images/infra-tablet-4.jpg",
-    desktop: "/images/infra-desktop-4.jpg",
+    mobile: asset("images/infra-mobile-4.jpg"),
+    tablet: asset("images/infra-tablet-4.jpg"),
+    desktop: asset("images/infra-desktop-4.jpg"),
   },
 ] as const;
 

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { asset } from "../asset";
 
 const carouselSlides = [0, 1, 2] as const;
 const floors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
@@ -76,15 +77,15 @@ export function Flats() {
             <picture>
               <source
                 media="(min-width: 1440px)"
-                srcSet="/images/flat-desktop.jpg"
+                srcSet={asset("images/flat-desktop.jpg")}
               />
               <source
                 media="(min-width: 834px)"
-                srcSet="/images/flat-tablet.jpg"
+                srcSet={asset("images/flat-tablet.jpg")}
               />
               <img
                 className="flats__slide-image"
-                src="/images/flat-mobile.jpg"
+                src={asset("images/flat-mobile.jpg")}
                 alt=""
                 width={340}
                 height={281}
@@ -159,15 +160,15 @@ export function Flats() {
           <picture>
             <source
               media="(min-width: 1440px)"
-              srcSet="/images/flat-choose-desktop.png"
+              srcSet={asset("images/flat-choose-desktop.png")}
             />
             <source
               media="(min-width: 834px)"
-              srcSet="/images/flat-choose-tablet.png"
+              srcSet={asset("images/flat-choose-tablet.png")}
             />
             <img
               className="flats__choose-image"
-              src="/images/flat-choose-mobile.png"
+              src={asset("images/flat-choose-mobile.png")}
               alt="Фасад дома"
               width={187}
               height={500}

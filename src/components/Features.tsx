@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { asset } from "../asset";
 
 const stats = [
   {
@@ -22,59 +23,59 @@ const features = [
   {
     id: 1,
     title: "Индивидуальное отопление",
-    image: "/images/features-mobile-1.jpg",
+    image: asset("images/features-mobile-1.jpg"),
   },
   {
     id: 2,
     title: "Тёплые полы",
-    image: "/images/features-mobile-2.jpg",
+    image: asset("images/features-mobile-2.jpg"),
   },
   {
     id: 3,
     title: "Панорамное остекление лоджий",
-    image: "/images/features-mobile-3.jpg",
+    image: asset("images/features-mobile-3.jpg"),
   },
   {
     id: 4,
     title: "Закрытая территория",
-    image: "/images/features-mobile-4.jpg",
+    image: asset("images/features-mobile-4.jpg"),
   },
   {
     id: 5,
     title: "Видеонаблюдение придомовой территории и подъезда",
-    image: "/images/features-mobile-5.jpg",
+    image: asset("images/features-mobile-5.jpg"),
     large: true,
   },
   {
     id: 6,
     title: "Умный домофон",
-    image: "/images/features-mobile-6.jpg",
+    image: asset("images/features-mobile-6.jpg"),
   },
   {
     id: 7,
     title: "Корзины под кондиционер",
-    image: "/images/features-mobile-7.jpg",
+    image: asset("images/features-mobile-7.jpg"),
   },
   {
     id: 8,
     title: "Черновая отделка",
-    image: "/images/features-mobile-8.jpg",
+    image: asset("images/features-mobile-8.jpg"),
   },
   {
     id: 9,
     title: "Кладовые на этаже",
-    image: "/images/features-mobile-9.jpg",
+    image: asset("images/features-mobile-9.jpg"),
   },
   {
     id: 10,
     title: "Современные планировки",
-    image: "/images/features-mobile-10.jpg",
+    image: asset("images/features-mobile-10.jpg"),
     large: true,
   },
   {
     id: 11,
     title: "Погреб в квартирах первого этажа",
-    image: "/images/features-mobile-11.jpg",
+    image: asset("images/features-mobile-11.jpg"),
     large: true,
   },
 ] as const;

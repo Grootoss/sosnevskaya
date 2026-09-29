@@ -1,9 +1,11 @@
+import { asset } from "../asset";
+
 const amenities = [
-  { id: "park", label: "Парк", icon: "/images/park.svg" },
-  { id: "sport", label: "Спорт", icon: "/images/sport.svg" },
-  { id: "shop", label: "Магазин", icon: "/images/shop.svg" },
-  { id: "restaurant", label: "Ресторан", icon: "/images/restaurant.svg" },
-  { id: "river", label: "Водоем", icon: "/images/river.svg" },
+  { id: "park", label: "Парк", icon: asset("images/park.svg") },
+  { id: "sport", label: "Спорт", icon: asset("images/sport.svg") },
+  { id: "shop", label: "Магазин", icon: asset("images/shop.svg") },
+  { id: "restaurant", label: "Ресторан", icon: asset("images/restaurant.svg") },
+  { id: "river", label: "Водоем", icon: asset("images/river.svg") },
 ] as const;
 
 const stats = [
@@ -80,11 +82,11 @@ export function Location() {
           <picture>
             <source
               media="(min-width: 834px)"
-              srcSet="/images/map-tablet-circle.png"
+              srcSet={asset("images/map-tablet-circle.png")}
             />
             <img
               className="location__map-image"
-              src="/images/map-mobile-circle.png"
+              src={asset("images/map-mobile-circle.png")}
               alt="Карта расположения"
               width={375}
               height={375}

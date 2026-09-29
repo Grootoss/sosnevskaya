@@ -1,3 +1,5 @@
+import { asset } from "../asset";
+
 const navItems = [
   { href: "#features", label: "Преимущества" },
   { href: "#infrastructure", label: "Инфраструктура" },
@@ -16,7 +18,7 @@ export function Footer() {
       </button>
       <img
         className="footer__logo"
-        src="/images/logo-mobile.svg"
+        src={asset("images/logo-mobile.svg")}
         alt="8-я Сосневская"
         width={133}
         height={42}
@@ -30,7 +32,12 @@ export function Footer() {
       </nav>
       <a className="footer__phone" href="tel:+70000000000">
         <span className="footer__phone-icon" aria-hidden="true">
-          <img src="/images/phone.svg" alt="" width={18} height={18} />
+          <img
+            src={asset("images/phone.svg")}
+            alt=""
+            width={18}
+            height={18}
+          />
         </span>
         <span className="footer__phone-number">+ 7 (000) 000 00 00</span>
       </a>
