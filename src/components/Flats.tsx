@@ -63,7 +63,7 @@ export function Flats() {
   }, []);
 
   return (
-    <section className="flats" aria-labelledby="flats-title">
+    <section className="flats" id="apartments" aria-labelledby="flats-title">
       <div
         className="flats__carousel"
         ref={carouselRef}
@@ -73,76 +73,98 @@ export function Flats() {
       >
         {carouselSlides.map((index) => (
           <div className="flats__slide" key={index}>
-            <img
-              className="flats__slide-image"
-              src="/images/flat-mobile.jpg"
-              alt=""
-              width={340}
-              height={281}
-              draggable={false}
-            />
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcSet="/images/flat-desktop.jpg"
+              />
+              <source
+                media="(min-width: 834px)"
+                srcSet="/images/flat-tablet.jpg"
+              />
+              <img
+                className="flats__slide-image"
+                src="/images/flat-mobile.jpg"
+                alt=""
+                width={340}
+                height={281}
+                draggable={false}
+              />
+            </picture>
           </div>
         ))}
       </div>
 
       <div className="flats__content">
-        <h2 className="flats__title" id="flats-title">
-          Квартиры
-        </h2>
+        <div className="flats__main">
+          <h2 className="flats__title" id="flats-title">
+            Квартиры
+          </h2>
 
-        <div className="flats__step">
-          <span className="flats__step-text">Шаг 1 из 3</span>
-          <div
-            className="flats__progress"
-            role="progressbar"
-            aria-valuemin={1}
-            aria-valuemax={3}
-            aria-valuenow={1}
-            aria-label="Шаг 1 из 3"
-          >
-            <span className="flats__progress-fill" />
+          <div className="flats__step">
+            <span className="flats__step-text">Шаг 1 из 3</span>
+            <div
+              className="flats__progress"
+              role="progressbar"
+              aria-valuemin={1}
+              aria-valuemax={3}
+              aria-valuenow={1}
+              aria-label="Шаг 1 из 3"
+            >
+              <span className="flats__progress-fill" />
+            </div>
           </div>
+
+          <p className="flats__subtitle">Выберите этаж</p>
+
+          <label className="flats__select">
+            <span className="visually-hidden">Этаж</span>
+            <select
+              value={floor}
+              onChange={(event) => setFloor(Number(event.target.value))}
+            >
+              {floors.map((value) => (
+                <option value={value} key={value}>
+                  {value} этаж
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <ul className="flats__stats">
+            <li className="flats__stat">
+              <span className="flats__stat-num">4</span>
+              <span className="flats__stat-text">
+                Квартиры доступно
+                <br />
+                на этаже
+              </span>
+            </li>
+            <li className="flats__stat">
+              <span className="flats__stat-num">2</span>
+              <span className="flats__stat-text">
+                Квартиры
+                <br />
+                уже продано
+              </span>
+            </li>
+          </ul>
+
+          <button className="flats__cta" type="button">
+            Продолжить
+          </button>
         </div>
 
-        <p className="flats__subtitle">Выберите этаж</p>
-
-        <div className="flats__body">
-          <div className="flats__controls">
-            <label className="flats__select">
-              <span className="visually-hidden">Этаж</span>
-              <select
-                value={floor}
-                onChange={(event) => setFloor(Number(event.target.value))}
-              >
-                {floors.map((value) => (
-                  <option value={value} key={value}>
-                    {value} этаж
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <ul className="flats__stats">
-              <li className="flats__stat">
-                <span className="flats__stat-num">4</span>
-                <span className="flats__stat-text">
-                  Квартиры доступно
-                  <br />
-                  на этаже
-                </span>
-              </li>
-              <li className="flats__stat">
-                <span className="flats__stat-num">2</span>
-                <span className="flats__stat-text">
-                  Квартиры
-                  <br />
-                  уже продано
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="flats__choose">
+        <div className="flats__choose">
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              srcSet="/images/flat-choose-desktop.png"
+            />
+            <source
+              media="(min-width: 834px)"
+              srcSet="/images/flat-choose-tablet.png"
+            />
             <img
               className="flats__choose-image"
               src="/images/flat-choose-mobile.png"
@@ -150,12 +172,8 @@ export function Flats() {
               width={187}
               height={500}
             />
-          </div>
+          </picture>
         </div>
-
-        <button className="flats__cta" type="button">
-          Продолжить
-        </button>
       </div>
     </section>
   );

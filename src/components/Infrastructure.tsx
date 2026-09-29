@@ -2,22 +2,30 @@ const items = [
   {
     id: 1,
     title: "Библиотека",
-    image: "/images/infra-mobile-1.jpg",
+    mobile: "/images/infra-mobile-1.jpg",
+    tablet: "/images/infra-tablet-1.jpg",
+    desktop: "/images/infra-desktop-1.jpg",
   },
   {
     id: 2,
     title: "Парковка",
-    image: "/images/infra-mobile-2.jpg",
+    mobile: "/images/infra-mobile-2.jpg",
+    tablet: "/images/infra-tablet-2.jpg",
+    desktop: "/images/infra-desktop-2.jpg",
   },
   {
     id: 3,
     title: "Бассейн",
-    image: "/images/infra-mobile-3.jpg",
+    mobile: "/images/infra-mobile-3.jpg",
+    tablet: "/images/infra-tablet-3.jpg",
+    desktop: "/images/infra-desktop-3.jpg",
   },
   {
     id: 4,
     title: "Фитнес",
-    image: "/images/infra-mobile-4.jpg",
+    mobile: "/images/infra-mobile-4.jpg",
+    tablet: "/images/infra-tablet-4.jpg",
+    desktop: "/images/infra-desktop-4.jpg",
   },
 ] as const;
 
@@ -26,7 +34,7 @@ const description =
 
 export function Infrastructure() {
   return (
-    <section className="infra" aria-labelledby="infra-title">
+    <section className="infra" id="infrastructure" aria-labelledby="infra-title">
       <h2 className="infra__title" id="infra-title">
         Инфраструктура
       </h2>
@@ -34,13 +42,17 @@ export function Infrastructure() {
       <ul className="infra__list">
         {items.map((item) => (
           <li className="infra__item" key={item.id}>
-            <img
-              className="infra__image"
-              src={item.image}
-              alt=""
-              width={375}
-              height={340}
-            />
+            <picture>
+              <source media="(min-width: 1440px)" srcSet={item.desktop} />
+              <source media="(min-width: 834px)" srcSet={item.tablet} />
+              <img
+                className="infra__image"
+                src={item.mobile}
+                alt=""
+                width={375}
+                height={340}
+              />
+            </picture>
             <div className="infra__content">
               <span className="infra__num">
                 {String(item.id).padStart(2, "0")}

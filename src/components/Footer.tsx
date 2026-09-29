@@ -1,3 +1,11 @@
+const navItems = [
+  { href: "#features", label: "Преимущества" },
+  { href: "#infrastructure", label: "Инфраструктура" },
+  { href: "#apartments", label: "Квартиры" },
+  { href: "#mortgage", label: "Ипотека" },
+  { href: "#contacts", label: "Контакты" },
+] as const;
+
 export function Footer() {
   return (
     <footer className="footer">
@@ -13,8 +21,18 @@ export function Footer() {
         width={133}
         height={42}
       />
-      <a className="footer__phone" href="tel:" aria-label="Позвонить">
-        <img src="/images/phone.svg" alt="" width={18} height={18} />
+      <nav className="footer__nav" aria-label="Навигация в подвале">
+        {navItems.map((item) => (
+          <a className="footer__nav-link" href={item.href} key={item.href}>
+            {item.label}
+          </a>
+        ))}
+      </nav>
+      <a className="footer__phone" href="tel:+70000000000">
+        <span className="footer__phone-icon" aria-hidden="true">
+          <img src="/images/phone.svg" alt="" width={18} height={18} />
+        </span>
+        <span className="footer__phone-number">+ 7 (000) 000 00 00</span>
       </a>
     </footer>
   );

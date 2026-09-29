@@ -6,6 +6,19 @@ const amenities = [
   { id: "river", label: "Водоем", icon: "/images/river.svg" },
 ] as const;
 
+const stats = [
+  {
+    value: "14",
+    unit: "Минут",
+    caption: "Пешком до метро «Тульская»",
+  },
+  {
+    value: "21",
+    unit: "Минута",
+    caption: "Пешком до метро «Тульская»",
+  },
+] as const;
+
 const pins = [
   { type: "park", x: 30, y: 16 },
   { type: "sport", x: 58, y: 20 },
@@ -26,22 +39,37 @@ const iconByType = Object.fromEntries(
 export function Location() {
   return (
     <section className="location" aria-labelledby="location-title">
-      <div className="location__intro">
-        <h2 className="location__title" id="location-title">
-          Локация
-        </h2>
-        <p className="location__text">
-          Удобное расположение. Поблизости парки, торговые центры, кинотеатры и
-          другие места для отдыха
-        </p>
+      <div className="location__top">
+        <div className="location__intro">
+          <h2 className="location__title" id="location-title">
+            Локация
+          </h2>
+          <p className="location__text">
+            Удобное расположение. Поблизости парки, торговые центры, кинотеатры
+            и другие места для отдыха
+          </p>
 
-        <ul className="location__amenities">
-          {amenities.map((item) => (
-            <li className="location__amenity" key={item.id}>
-              <span className="location__icon" aria-hidden="true">
-                <img src={item.icon} alt="" width={24} height={24} />
-              </span>
-              <span className="location__label">{item.label}</span>
+          <ul className="location__amenities">
+            {amenities.map((item) => (
+              <li className="location__amenity" key={item.id}>
+                <span className="location__icon" aria-hidden="true">
+                  <img src={item.icon} alt="" width={24} height={24} />
+                </span>
+                <span className="location__label">{item.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <ul className="location__stats">
+          {stats.map((stat) => (
+            <li className="location__stat" key={stat.value + stat.unit}>
+              <p className="location__stat-value">
+                <span className="location__stat-num">{stat.value}</span>
+                <span className="location__stat-sep">/</span>
+                <span className="location__stat-unit">{stat.unit}</span>
+              </p>
+              <p className="location__stat-caption">{stat.caption}</p>
             </li>
           ))}
         </ul>
@@ -49,13 +77,19 @@ export function Location() {
 
       <div className="location__map-wrap">
         <div className="location__map">
-          <img
-            className="location__map-image"
-            src="/images/map-mobile-circle.png"
-            alt="Карта расположения"
-            width={375}
-            height={375}
-          />
+          <picture>
+            <source
+              media="(min-width: 834px)"
+              srcSet="/images/map-tablet-circle.png"
+            />
+            <img
+              className="location__map-image"
+              src="/images/map-mobile-circle.png"
+              alt="Карта расположения"
+              width={375}
+              height={375}
+            />
+          </picture>
           <span
             className="location__pin location__pin--main"
             aria-label="Объект"

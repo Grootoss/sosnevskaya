@@ -107,7 +107,7 @@ function FeatureCard({
         src={image}
         alt=""
         width={large ? 538 : 280}
-        height={large ? 552 : 228}
+        height={large ? 547 : 228}
       />
       <div className="features__meta">
         <span className="features__num">{String(id).padStart(2, "0")}</span>
@@ -176,7 +176,7 @@ export function Features() {
   }, []);
 
   return (
-    <section className="features" aria-labelledby="features-title">
+    <section className="features" id="features" aria-labelledby="features-title">
       <ul className="features__stats">
         {stats.map((stat) => (
           <li className="features__stat" key={stat.value + stat.unit}>
